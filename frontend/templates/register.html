@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Health ID | MedLink</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-slate-50 flex items-center justify-center min-h-screen py-12 px-6">
+    <div class="max-w-2xl w-full bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden">
+        <div class="bg-blue-600 p-8 text-white text-center">
+            <h2 class="text-3xl font-bold">Join MedLink</h2>
+            <p class="opacity-80 mt-2">Create your Unified Digital Health ID in 60 seconds.</p>
+        </div>
+        
+        <form class="p-10 grid md:grid-cols-2 gap-6" onsubmit="event.preventDefault(); location.href='login.html'">
+            <div class="md:col-span-2">
+                <label class="block text-sm font-bold text-slate-700 mb-2">Registration Role</label>
+                <div class="flex gap-4">
+                    <label class="flex-1 border-2 border-blue-100 p-4 rounded-2xl flex items-center gap-3 cursor-pointer hover:bg-blue-50">
+                        <input type="radio" name="role" checked class="w-4 h-4 text-blue-600">
+                        <span class="font-bold text-slate-700">Patient</span>
+                    </label>
+                    <label class="flex-1 border-2 border-slate-100 p-4 rounded-2xl flex items-center gap-3 cursor-pointer hover:bg-slate-50">
+                        <input type="radio" name="role" class="w-4 h-4 text-blue-600">
+                        <span class="font-bold text-slate-700">Medical Professional</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="space-y-2">
+                <label class="block text-sm font-bold text-slate-700">Full Name</label>
+                <input type="text" required placeholder="John Doe" class="w-full p-4 border rounded-2xl outline-none focus:ring-2 focus:ring-blue-500 border-slate-200">
+            </div>
+
+            <div class="space-y-2">
+                <label class="block text-sm font-bold text-slate-700">Mobile Number</label>
+                <input type="tel" required placeholder="+91 00000 00000" class="w-full p-4 border rounded-2xl outline-none focus:ring-2 focus:ring-blue-500 border-slate-200">
+            </div>
+
+            <div class="space-y-2">
+                <label class="block text-sm font-bold text-slate-700">Blood Group</label>
+                <select class="w-full p-4 border rounded-2xl outline-none focus:ring-2 focus:ring-blue-500 border-slate-200 bg-white">
+                    <option>O+</option><option>O-</option><option>A+</option><option>A-</option>
+                    <option>B+</option><option>B-</option><option>AB+</option><option>AB-</option>
+                </select>
+            </div>
+
+            <div class="space-y-2">
+                <label class="block text-sm font-bold text-slate-700">Date of Birth</label>
+                <input type="date" required class="w-full p-4 border rounded-2xl outline-none focus:ring-2 focus:ring-blue-500 border-slate-200">
+            </div>
+
+            <div class="md:col-span-2 space-y-2">
+                <label class="block text-sm font-bold text-slate-700">Known Allergies (Crucial for Emergency Access)</label>
+                <textarea placeholder="e.g. Penicillin, Peanuts, Sulfa Drugs..." class="w-full p-4 border rounded-2xl outline-none focus:ring-2 focus:ring-red-200 border-slate-200 h-24"></textarea>
+            </div>
+
+            <div class="md:col-span-2 mt-4">
+                <button type="submit" class="w-full bg-blue-600 text-white py-4 rounded-2xl font-bold text-lg hover:bg-blue-700 transition shadow-xl shadow-blue-100">
+                    Create Secure Profile
+                </button>
+                <p class="text-center mt-6 text-sm text-slate-500">
+                    Already registered? <a href="login.html" class="text-blue-600 font-bold hover:underline">Sign In</a>
+                </p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
