@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | MedLink</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-slate-50 flex items-center justify-center min-h-screen p-6">
+    <div class="max-w-md w-full bg-white rounded-3xl shadow-2xl shadow-slate-200 border border-slate-100 overflow-hidden">
+        <div class="p-10">
+            <div class="flex items-center gap-2 mb-8 justify-center">
+                <div class="bg-blue-600 p-2 rounded-lg text-white">
+                    <i class="fa-solid fa-house-medical"></i>
+                </div>
+                <span class="text-2xl font-bold">MedLink</span>
+            </div>
+            
+            <h2 class="text-2xl font-bold text-slate-800 text-center">Welcome Back</h2>
+            <p class="text-slate-500 text-center mt-2 mb-8">Access your records via secure OTP</p>
+
+            <div class="space-y-4">
+                <div class="relative">
+                    <i class="fa-solid fa-phone absolute left-4 top-4 text-slate-400"></i>
+                    <input type="tel" id="loginPhone" placeholder="Mobile Number" class="w-full pl-12 pr-4 py-4 border rounded-2xl outline-none focus:ring-2 focus:ring-blue-500 border-slate-200">
+                </div>
+
+                <div id="otpBox" class="hidden animate-in fade-in slide-in-from-top-4">
+                    <div class="relative">
+                        <i class="fa-solid fa-key absolute left-4 top-4 text-slate-400"></i>
+                        <input type="text" maxlength="6" placeholder="6-Digit OTP" class="w-full pl-12 pr-4 py-4 border rounded-2xl outline-none focus:ring-2 focus:ring-blue-500 border-slate-200 tracking-[0.5em] font-bold">
+                    </div>
+                </div>
+
+                <button id="authBtn" onclick="handleAuth()" class="w-full bg-slate-900 text-white py-4 rounded-2xl font-bold hover:bg-slate-800 transition">
+                    Send Verification Code
+                </button>
+            </div>
+
+            <p class="text-center mt-8 text-sm text-slate-500">
+                Don't have an account? <a href="register.html" class="text-blue-600 font-bold hover:underline">Register here</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let otpSent = false;
+        function handleAuth() {
+            const btn = document.getElementById('authBtn');
+            const phone = document.getElementById('loginPhone').value;
+            
+            if(!phone) return alert("Please enter mobile number");
+
+            if(!otpSent) {
+                document.getElementById('otpBox').classList.remove('hidden');
+                btn.innerText = "Verify & Login";
+                btn.classList.replace('bg-slate-900', 'bg-blue-600');
+                otpSent = true;
+            } else {
+                location.href = 'dashboard.html';
+            }
+        }
+    </script>
+</body>
+</html>
